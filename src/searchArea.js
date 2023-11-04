@@ -13,7 +13,7 @@ export default function searchArea() {
   const searchBox = document.createElement('input');
   searchBox.classList.add('search-box');
   searchBox.setAttribute('type', 'text');
-  searchBox.setAttribute('placeholder', 'search city');
+  searchBox.setAttribute('placeholder', 'search city or US zip');
   searchBox.required = true;
 
   // Create a button element for the search button

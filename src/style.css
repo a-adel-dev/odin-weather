@@ -13,6 +13,78 @@ body {
   background-attachment: fixed;
 }
 
+/* ************************************ */
+/* toggle button */
+/* ************************************ */
+
+.toggle-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.toggle-button {
+  opacity: 0;
+  position: absolute;
+  left: -90000px;
+  top: -90000px;
+}
+
+.toggle-button + label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.toggle-button + label::before {
+  width: 8rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  content: 'imperial';
+  background-color: #3498db;
+  border-radius: 3rem;
+  padding-right: 1rem;
+  padding-left: 0.75rem;
+  color: white;
+}
+
+.toggle-button:checked + label::before {
+  justify-content: flex-start;
+  content: 'metric';
+  color: white;
+}
+
+.toggle-button + label::after {
+  position: absolute;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  content: 'metric';
+  width: 4rem;
+  height: 2.5rem;
+  background-color: #ffffff;
+  border-radius: 3rem;
+  color: #3498db;
+  margin-left: 0.3rem;
+  transition: left 200ms ease-in-out;
+}
+
+.toggle-button:checked + label::after {
+  width: 5rem;
+  left: 4rem;
+  content: 'imperial';
+  color: #3498db;
+}
+
+/* ************************************ */
+/* search area */
+/* ************************************ */
 .search-container {
   display: flex;
   flex-direction: column;
@@ -28,7 +100,7 @@ body {
   border-radius: 20px;
   padding: 5px;
   gap: 20px;
-  margin-top: 5rem;
+  margin-top: 2rem;
   width: 100%;
 }
 .search-box {

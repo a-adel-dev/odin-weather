@@ -1,6 +1,8 @@
 import './style.css';
 import getWeatherData from './weather';
 import searchArea from './searchArea';
+import toggleButton from './toggle';
+import AppSettings from './appSettings';
 
 async function getLocation() {
   const element = document.createElement('p');
@@ -10,7 +12,10 @@ async function getLocation() {
   document.body.appendChild(element);
 }
 
+const appSettings = new AppSettings();
+
 function renderPage() {
+  document.body.appendChild(toggleButton());
   document.body.appendChild(searchArea());
 }
 
