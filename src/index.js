@@ -1,12 +1,34 @@
 import './style.css';
 import getWeatherData from './weather';
+import searchArea from './searchArea';
 
-function component() {
+async function getLocation() {
   const element = document.createElement('p');
-  const data = getWeatherData();
+  const data = await getWeatherData();
   console.log(data);
   element.innerHTML = data.location.name;
-  return element;
+  document.body.appendChild(element);
 }
 
-document.body.appendChild(component());
+function renderPage() {
+  document.body.appendChild(searchArea());
+}
+
+renderPage();
+
+// getLocation();
+
+// location
+// temp now
+// temp high (c/f)
+// temp low (c/f)
+// feels like (c/f)
+// condition (heavy rain at times)
+// wind (kph/mph)
+// wind direction
+// humedity
+// last updated
+
+// forcast
+// min temp/ max temp
+// condition
