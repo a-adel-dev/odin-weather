@@ -1,6 +1,7 @@
 import searchSVG from './img/search.svg';
+import renderApp from './renderApp';
 
-export default function searchArea() {
+export default function searchArea(appSettings) {
   // Create a container div for the search box and button
   const searchForm = document.createElement('form');
   searchForm.classList.add('search-container');
@@ -45,6 +46,8 @@ export default function searchArea() {
       validationText.classList.remove('hidden');
     } else {
       validationText.classList.add('hidden');
+      appSettings.setLocation(searchBox.value);
+      renderApp(appSettings);
     }
   });
 

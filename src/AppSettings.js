@@ -1,12 +1,17 @@
 class AppSettings {
   constructor() {
     this.apiKey = 'b8f0840984e340018bb144353230607';
-    this.units = 'metric';
+    this.imperial = false;
     this.location = '';
+    this.data = null;
   }
 
-  setUnits(units) {
-    this.units = units;
+  toggleUnits() {
+    this.imperial = !this.imperial;
+  }
+
+  getImperial() {
+    return this.imperial;
   }
 
   setLocation(location) {
@@ -19,6 +24,14 @@ class AppSettings {
 
   getLocation() {
     return this.location;
+  }
+
+  setWeatherData(data) {
+    this.data = data;
+  }
+
+  getWeatherData() {
+    return this.data;
   }
 }
 
