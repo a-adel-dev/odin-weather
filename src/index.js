@@ -2,7 +2,7 @@ import './style.css';
 import getWeatherData from './weather';
 import searchArea from './searchArea';
 import toggleButton from './toggle';
-import AppSettings from './appSettings';
+import AppSettings from './AppSettings';
 
 async function getLocation() {
   const element = document.createElement('p');
