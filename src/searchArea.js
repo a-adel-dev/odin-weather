@@ -47,6 +47,7 @@ export default function searchArea(appSettings) {
     } else {
       validationText.classList.add('hidden');
       appSettings.setLocation(searchBox.value);
+      appSettings.setDirty();
       renderApp(appSettings);
     }
   });

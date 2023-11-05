@@ -135,3 +135,40 @@ body {
 .hidden {
   display: none;
 }
+
+/* **********************************
+Weather card
+********************************** */
+.weather-card {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  text-align: center;
+
+  margin: auto 2rem;
+}
+
+.weather-div {
+  width: 60%;
+}
+.weather-icon {
+  width: 100%;
+  height: auto;
+}
+
+.temperature {
+  font-size: 3rem;
+}
+
+.location {
+  font-size: 2rem;
+  color: #3498db;
+}
+
+.description {
+  font-size: 1.25rem;
+  color: #3498db;
+}

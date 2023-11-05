@@ -4,6 +4,7 @@ class AppSettings {
     this.imperial = false;
     this.location = '';
     this.data = null;
+    this.dirty = false;
   }
 
   toggleUnits() {
@@ -32,6 +33,18 @@ class AppSettings {
 
   getWeatherData() {
     return this.data;
+  }
+
+  getDirty() {
+    return this.dirty;
+  }
+
+  setDirty() {
+    this.dirty = true;
+  }
+
+  clearDirty() {
+    this.dirty = false;
   }
 }
 
