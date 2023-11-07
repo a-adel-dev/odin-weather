@@ -1,10 +1,12 @@
-class AppSettings {
+import getWeatherData from './weather';
+
+class WeatherApp {
   constructor() {
     this.apiKey = 'b8f0840984e340018bb144353230607';
     this.imperial = false;
     this.location = '';
     this.data = null;
-    this.dirty = false;
+    this.requesting = false;
   }
 
   toggleUnits() {
@@ -31,7 +33,12 @@ class AppSettings {
     this.data = data;
   }
 
-  getWeatherData() {
+  async getWeatherData() {
+    if (!this.requesting) {
+      return this.data;
+    }
+    this.data = await getWeatherData(this.location);
+    this.clearRequesting();
     return this.data;
   }
 
@@ -39,13 +46,17 @@ class AppSettings {
     return this.dirty;
   }
 
-  setDirty() {
-    this.dirty = true;
+  setRequestingState() {
+    this.requesting = true;
   }
 
-  clearDirty() {
-    this.dirty = false;
+  clearRequesting() {
+    this.requesting = false;
+  }
+
+  getRequestingState() {
+    return this.requesting;
   }
 }
 
-export default AppSettings;
+export default WeatherApp;

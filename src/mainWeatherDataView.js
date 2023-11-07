@@ -1,5 +1,4 @@
-export default function mainWeatherDataView(appSettings) {
-  const data = appSettings.getWeatherData();
+export default function mainWeatherDataView(data, imperial) {
   const component = document.createElement('div');
   component.className = 'weather-card';
 
@@ -14,12 +13,10 @@ export default function mainWeatherDataView(appSettings) {
 
   const temperature = document.createElement('div');
   temperature.className = 'temperature';
-  const tempC = data.current.temp_c;
-  const tempf = data.current.temp_f;
+  const tempC = Math.round(data.current.temp_c);
+  const tempf = Math.round(data.current.temp_f);
 
-  temperature.textContent = appSettings.getImperial()
-    ? `${tempf}°f`
-    : `${tempC}°C`;
+  temperature.textContent = imperial ? `${tempf}°f` : `${tempC}°C`;
 
   const location = document.createElement('div');
   location.className = 'location';

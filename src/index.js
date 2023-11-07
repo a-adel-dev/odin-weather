@@ -1,6 +1,6 @@
 import './style.css';
 import getWeatherData from './weather';
-import AppSettings from './AppSettings';
+import WeatherApp from './WeatherApp';
 import renderApp from './renderApp';
 
 async function getLocation() {
@@ -11,9 +11,9 @@ async function getLocation() {
   document.body.appendChild(element);
 }
 
-const appSettings = new AppSettings();
+const app = new WeatherApp();
 
-renderApp(appSettings);
+renderApp(app);
 
 // getLocation();
 
