@@ -4,6 +4,11 @@ import getWeatherData from './weather';
 import mainWeatherDataView from './mainWeatherDataView';
 import hourlyContainer from './hourlyContainer';
 import forecastContainer from './forecastContainer';
+import createRainPattern from './rain';
+import containsRainButNotPossible from './containsRain';
+import createSnowPattern from './snow';
+import containsSnowButNotPossible from './containsSnow';
+import footer from './footer';
 
 export default async function renderApp(app) {
   document.body.innerHTML = '';
@@ -26,7 +31,17 @@ export default async function renderApp(app) {
         document.body.appendChild(hourlyComponent);
         const forecast = forecastContainer(weatherData, app.getImperial());
         document.body.appendChild(forecast);
+        if (containsRainButNotPossible(weatherData.current.condition.text)) {
+          const rain = createRainPattern(150);
+          document.body.appendChild(rain);
+        }
+        if (containsSnowButNotPossible(weatherData.current.condition.text)) {
+          const snow = createSnowPattern(50);
+          document.body.appendChild(snow);
+        }
       }
     }
   }
+  const footerComponent = footer();
+  document.body.appendChild(footerComponent);
 }

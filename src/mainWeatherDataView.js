@@ -11,6 +11,9 @@ export default function mainWeatherDataView(data, imperial) {
   weatherIcon.className = 'weather-icon';
   icon.appendChild(weatherIcon);
 
+  const textSection = document.createElement('div');
+  textSection.className = 'main-text-section';
+
   const temperature = document.createElement('div');
   temperature.className = 'temperature';
   const tempC = Math.round(data.current.temp_c);
@@ -27,9 +30,10 @@ export default function mainWeatherDataView(data, imperial) {
   description.textContent = data.current.condition.text;
 
   component.appendChild(icon);
-  component.appendChild(temperature);
-  component.appendChild(location);
-  component.appendChild(description);
+  textSection.appendChild(temperature);
+  textSection.appendChild(location);
+  textSection.appendChild(description);
+  component.appendChild(textSection);
 
   return component;
 }
