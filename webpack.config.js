@@ -1,9 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// require('dotenv').config();
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: './src/index.js',
   devtool: 'eval-source-map',
   devServer: {
@@ -11,7 +10,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Weather App',
+      title: 'Adel Weather App',
+      favicon: './src/img/sun.svg',
     }),
   ],
   output: {
