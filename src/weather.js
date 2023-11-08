@@ -5,6 +5,9 @@ export default async function getWeatherData(location) {
   try {
     const rawData = await fetch(forecastURL);
     const weatherData = await rawData.json();
+    if (rawData.status === 400) {
+      return weatherData.error.message;
+    }
     return weatherData;
   } catch (error) {
     console.log('error');

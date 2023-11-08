@@ -185,6 +185,7 @@ hourly container
   margin: auto 2rem;
   overflow-x: scroll;
   gap: 0.5rem;
+  margin-top: 2rem;
 }
 
 .hourly-card {
@@ -206,4 +207,52 @@ hourly container
 
 .temp {
   font-size: 1.15rem;
+}
+
+/* ***********************************
+forecast container
+*********************************** */
+
+.forecast-container {
+  display: flex;
+  width: 90%;
+  margin: auto 1rem;
+  overflow: hidden;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.forecast-card {
+  background-color: #3498db31;
+  min-width: 7rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.max-temp,
+.min-temp {
+  font-size: 1rem;
+}
+
+.forecast-temp {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+
+/* ***********************************
+error
+*********************************** */
+
+.error {
+  text-align: center;
+  display: block;
+  margin-top: 2rem;
+  color: red;
 }

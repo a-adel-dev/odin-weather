@@ -8,15 +8,15 @@ export default function hourlyContainer(data, imperial) {
 
   hourlyData.forEach((hourData) => {
     const impTemp = parseFloat(hourData.temp_f);
-    const temp_f = Math.round(impTemp);
+    const tempf = Math.round(impTemp);
 
     const metricTemp = parseFloat(hourData.temp_c);
-    const temp_c = Math.round(metricTemp);
+    const tempc = Math.round(metricTemp);
 
     const card = hourlyCard(
       hourData.time,
       hourData.condition.icon,
-      imperial ? `${temp_f}°f` : `${temp_c}°C`
+      imperial ? `${tempf}°f` : `${tempc}°C`
     );
     component.append(card);
   });

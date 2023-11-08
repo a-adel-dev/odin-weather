@@ -18,17 +18,6 @@ export default function hourlyCard(hour, iconURL, temp) {
   tempDiv.className = 'temp';
   tempDiv.textContent = temp;
 
-  //   const maxTemp = document.createElement('div');
-  //   maxTemp.className = 'max-temp';
-  //   maxTemp.textContent = max;
-
-  //   const minTemp = document.createElement('div');
-  //   minTemp.className = 'min-temp';
-  //   minTemp.textContent = min;
-
-  //   temp.appendChild(maxTemp);
-  //   temp.appendChild(minTemp);
-
   component.appendChild(hourSpace);
   component.appendChild(icon);
   component.appendChild(tempDiv);
